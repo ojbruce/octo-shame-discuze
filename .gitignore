@@ -1,0 +1,5 @@
+# Installed libs
+node_modules
+
+# NIF 
+.DS_Store

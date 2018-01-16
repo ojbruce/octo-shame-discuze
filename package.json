@@ -1,0 +1,8 @@
+{
+  "name": "discuze",
+  "version": "1.0.0",
+  "description": "Discuss with discuze.",
+  "main": "index.js",
+  "author": "Olivia Bruce",
+  "license": "MIT"
+}
