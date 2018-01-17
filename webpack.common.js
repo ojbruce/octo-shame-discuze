@@ -2,6 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractSass = new ExtractTextPlugin({
+  filename: "[name].[contenthash:8].css"
+});
+
 
 module.exports = {
   entry: {
@@ -10,7 +16,7 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    chunkFilename: '[name].[contenthash:8].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -24,11 +30,24 @@ module.exports = {
             presets: ['babel-preset-env']
           }
         }
+      },
+      {
+        test: /\.scss$/,
+        use: extractSass.extract({
+            use: [{
+                loader: "css-loader"
+            }, {
+                loader: "sass-loader"
+            }],
+            // use style-loader in development
+            fallback: "style-loader"
+        })
       }
     ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
+    extractSass,
     new HtmlWebpackPlugin({
       title: 'Discuze'
     }),
