@@ -8,6 +8,25 @@ module.exports = {
    app: './src/index.js',
    vendor: ['react']
   },
+  output: {
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['babel-preset-env']
+          }
+        }
+      }
+    ]
+  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
@@ -16,10 +35,5 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest'
     })
-  ],
-  output: {
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  }
+  ]
 }
