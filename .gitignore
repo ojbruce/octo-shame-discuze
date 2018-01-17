@@ -1,5 +1,8 @@
 # Installed libs
 node_modules
 
+# Public
+dist/
+
 # NIF 
 .DS_Store
