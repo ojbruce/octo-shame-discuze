@@ -1,3 +1,11 @@
+import React from 'react'
+import { render } from 'react-dom'
+
+import App from './components/App'
+
 require('./base.scss')
 
-console.log('test')
+render(
+  <App />,
+  document.getElementById('app')
+)
