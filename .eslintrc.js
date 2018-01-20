@@ -1,3 +1,3 @@
 module.exports = {
-    "extends": ["standard", "standard-react"]
-};
+  "extends": ["standard", "standard-react"]
+}
