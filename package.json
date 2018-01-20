@@ -7,13 +7,23 @@
     "build-watch": "webpack --watch --config webpack.dev.js",
     "build": "webpack --config webpack.dev.js",
     "build-prod": "webpack -p --config webpack.prod.js",
-    "test": "mocha src/test",
+    "test": "nyc mocha --require babel-core/register src/**/*.spec.js",
     "lint": "eslint src"
   },
+  "babel": {
+    "presets": [
+      "babel-preset-env"
+    ]
+  },
   "nyc": {
-    "exclude": [
-      "**/test.*.js"
+    "include": [
+      "src/*"
     ],
+    "extension": [
+      ".js"
+    ],
+    "sourceMap": true,
+    "instrument": true,
     "lines": 80,
     "statements": 80,
     "branches": 80,
@@ -24,6 +34,7 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-istanbul": "^4.1.5",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "chai": "^4.1.2",
@@ -53,7 +64,10 @@
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
   }
 }
