@@ -1,18 +1,17 @@
-const path = require('path');
-const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require('path')
+const webpack = require('webpack')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const extractSass = new ExtractTextPlugin({
-  filename: "[name].[contenthash:8].css"
-});
-
+  filename: '[name].[contenthash:8].css'
+})
 
 module.exports = {
   entry: {
-   app: './src/index.js',
-   vendor: ['react']
+    app: './src/index.js',
+    vendor: ['react']
   },
   output: {
     filename: '[name].bundle.js',
@@ -27,20 +26,20 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['babel-preset-env']
+            presets: ['babel-preset-env', 'babel-preset-react']
           }
         }
       },
       {
         test: /\.scss$/,
         use: extractSass.extract({
-            use: [{
-                loader: "css-loader"
-            }, {
-                loader: "sass-loader"
-            }],
-            // use style-loader in development
-            fallback: "style-loader"
+          use: [{
+            loader: 'css-loader'
+          }, {
+            loader: 'sass-loader'
+          }],
+          // use style-loader in development
+          fallback: 'style-loader'
         })
       }
     ]
@@ -49,7 +48,8 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     extractSass,
     new HtmlWebpackPlugin({
-      title: 'Discuze'
+      title: 'Discuze',
+      template: 'src/template/index.html'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest'
