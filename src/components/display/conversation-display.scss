@@ -3,6 +3,7 @@
   height: 40vh;
   overflow: hidden;
   padding: 0.5em;
+  margin: $spacing_div_small 0;
 
   background-color: $color-white; 
 }
@@ -11,7 +12,6 @@
   .chat__display {
     min-height: 200px;
     height: 80vh;
-    margin: $spacing_div_small 0;
     overflow: auto;
     
     background-color: $color-white; 
