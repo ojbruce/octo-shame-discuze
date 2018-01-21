@@ -36,7 +36,13 @@ module.exports = {
           use: [{
             loader: 'css-loader'
           }, {
-            loader: 'sass-loader'
+            loader: 'sass-loader',
+            options: {
+              data: '@import "./style/_vars.scss";',
+              includePaths: [
+                path.join(__dirname, 'src')
+              ]
+            }
           }],
           // use style-loader in development
           fallback: 'style-loader'
