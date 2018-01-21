@@ -1,0 +1,17 @@
+.chat__form {
+  input {
+    width: 75%;
+    padding: 0.5em;
+    margin-right: 5%; 
+  }
+  button {
+    width: 20%;
+    padding: 0.5em;
+    color: $color-secundary;
+    border: $color-secundary 1px solid;
+  }
+
+  input, button {
+    outline-width: thin;
+  }
+}
