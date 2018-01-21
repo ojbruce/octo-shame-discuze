@@ -31,7 +31,7 @@ class ChatInput extends React.Component {
     return (
       <form className='chat__form' onSubmit={this.handleSubmit}>
         <input id='stanza' name='stanza' type='text' className='form__input'
-          placeholder='Votre message' autoComplete='off'
+          placeholder={this.props.username + ': votre message'} autoComplete='off'
           value={this.state.text}
           onChange={this.handleChange}
         />
