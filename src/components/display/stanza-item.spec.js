@@ -35,7 +35,7 @@ describe('components', () => {
       const { output } = setup()
 
       output.type.should.equal('div')
-      output.props.className.should.equal('chat__conversation__stanza-item')
+      output.props.className.should.equal('chat__conversation__stanza-row')
     })
   })
 })
