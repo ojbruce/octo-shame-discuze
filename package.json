@@ -7,12 +7,12 @@
     "build-watch": "webpack --watch --config webpack.dev.js",
     "build": "webpack --config webpack.dev.js",
     "build-prod": "webpack -p --config webpack.prod.js",
-    "test": "nyc mocha --require babel-core/register src/**/*.spec.js",
+    "test": "nyc mocha $(find src -name '*.spec.js') --require babel-core/register",
     "lint": "eslint src"
   },
   "babel": {
     "presets": [
-      "babel-preset-env"
+      "react", "babel-preset-env"
     ]
   },
   "nyc": {
@@ -56,6 +56,7 @@
     "mocha": "^4.1.0",
     "node-sass": "^4.7.2",
     "nyc": "^11.4.1",
+    "react-test-renderer": "^16.2.0",
     "sass-loader": "^6.0.6",
     "sinon": "^4.1.6",
     "style-loader": "^0.19.1",
