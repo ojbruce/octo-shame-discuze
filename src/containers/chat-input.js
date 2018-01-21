@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 require('./chat-input.scss')
+let classNames = require('classnames')
 
 class ChatInput extends React.Component {
   constructor (props) {
@@ -28,6 +29,13 @@ class ChatInput extends React.Component {
   }
 
   render () {
+    const cNames = classNames(
+      {
+        'form__submit': true,
+        'isEmpty': this.state.text === ''
+      }
+    )
+
     return (
       <form className='chat__form' onSubmit={this.handleSubmit}>
         <input id='stanza' name='stanza' type='text' className='form__input'
@@ -35,7 +43,7 @@ class ChatInput extends React.Component {
           value={this.state.text}
           onChange={this.handleChange}
         />
-        <button type='submit' className='form__submit'>
+        <button type='submit' className={cNames}>
           Envoyer
         </button>
       </form>

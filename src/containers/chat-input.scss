@@ -15,4 +15,9 @@
     outline-width: thin;
     font-size: medium;
   }
+
+  .isEmpty {
+    color: $color_text_disable;
+    border: 1px solid $color_text_disable;
+  }
 }
