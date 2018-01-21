@@ -12,11 +12,13 @@ describe('Stanzas reducer', () => {
     expect(
       stanzas([], {
         type: 'ADD_STANZA',
+        id: 0,
         text: 'Send a test',
         username: 'Rick'
       })
     ).to.deep.equal([
       {
+        id: 0,
         text: 'Send a test',
         username: 'Rick'
       }
@@ -25,19 +27,23 @@ describe('Stanzas reducer', () => {
     expect(
       stanzas([
         {
+          id: 0,
           text: 'Send a test',
           username: 'Rick'
         }
       ], {
         type: 'ADD_STANZA',
+        id: 1,
         text: 'Send a Second test',
         username: 'Morty'
       })
     ).to.deep.equal([
       {
+        id: 0,
         text: 'Send a test',
         username: 'Rick'
       }, {
+        id: 1,
         text: 'Send a Second test',
         username: 'Morty'
       }

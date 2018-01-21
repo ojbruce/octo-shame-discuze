@@ -6,6 +6,7 @@ function stanzas (state = [], action) {
       return [
         ...state,
         {
+          id: action.id,
           username: action.username,
           text: action.text
         }
