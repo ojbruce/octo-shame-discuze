@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+require('./chat-input.scss')
+
 class ChatInput extends React.Component {
   constructor (props) {
     super(props)
@@ -15,8 +17,10 @@ class ChatInput extends React.Component {
 
   handleSubmit (event) {
     event.preventDefault()
-    this.props.addStanza(event.target.stanza.value, this.props.chatName)
-    this.setState({text: ''})
+    if (event.target.stanza.value !== '') {
+      this.props.addStanza(event.target.stanza.value, this.props.chatName)
+      this.setState({text: ''})
+    }
   }
 
   handleChange (e) {
