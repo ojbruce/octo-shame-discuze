@@ -9,7 +9,7 @@ require('./chat-window.scss')
 const chatWindow = ({stanzas, username, recipient, addStanza}) => (
   <div className='chat-window'>
     <h2>Chat with : {recipient}</h2>
-    <ConversationDisplay stanzas={stanzas} />
+    <ConversationDisplay stanzas={stanzas} currentUsername={username} />
     <ChatInput username={username} addStanza={addStanza} />
   </div>
 )

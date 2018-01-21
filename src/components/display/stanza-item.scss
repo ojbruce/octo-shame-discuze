@@ -1,0 +1,19 @@
+.chat__conversation__stanza-row {
+  &.right {
+    text-align: right;
+
+    .stanza-message {
+      background: $color_accent;
+    }
+  }
+
+  .stanza-message {
+    width: auto;
+    background: $color_secundary;
+    color: $color_primary;
+    padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+  }
+}
+
