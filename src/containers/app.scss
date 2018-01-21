@@ -1,0 +1,10 @@
+.discuze__main-section {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .discuze__main-section {
+    flex-direction: row;
+  }
+}

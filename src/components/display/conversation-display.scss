@@ -1,6 +1,19 @@
-
 .chat__display {
-  height: 200px;
-  width: 50%;
+  min-height: 200px;
+  height: 40vh;
   overflow: hidden;
+  padding: 0.5em;
+
+  background-color: $color-white; 
+}
+
+@media (min-width: 768px) {
+  .chat__display {
+    min-height: 200px;
+    height: 80vh;
+    margin: $spacing_div_small 0;
+    overflow: hidden;
+  
+    background-color: $color-white; 
+  }
 }

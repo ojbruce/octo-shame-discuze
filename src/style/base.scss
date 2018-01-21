@@ -1,5 +1,15 @@
 @import '_vars.scss';
 
+* {
+  padding: 0;
+  margin: 0;
+  
+  list-style: none;
+  
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
- background-color: $color_white;
+  background-color: $color_primary;
+  color: $color_secundary
 }
