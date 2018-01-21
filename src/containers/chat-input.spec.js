@@ -5,7 +5,7 @@ import ChatInput from './chat-input'
 
 const setup = () => {
   const props = {
-    chatName: 'Chat T',
+    username: 'T',
     text: 'New Message',
     addStanza: function(e){return e}
   }

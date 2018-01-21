@@ -18,7 +18,7 @@ class ChatInput extends React.Component {
   handleSubmit (event) {
     event.preventDefault()
     if (event.target.stanza.value !== '') {
-      this.props.addStanza(event.target.stanza.value, this.props.chatName)
+      this.props.addStanza(event.target.stanza.value, this.props.username)
       this.setState({text: ''})
     }
   }
@@ -45,7 +45,7 @@ class ChatInput extends React.Component {
 
 ChatInput.propTypes = {
   addStanza: PropTypes.func.isRequired,
-  chatName: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
   text: PropTypes.string
 }
 

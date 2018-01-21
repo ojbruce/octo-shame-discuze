@@ -6,11 +6,11 @@ import ConversationDisplay from './../components/display/conversation-display'
 
 require('./chat-window.scss')
 
-const chatWindow = ({stanzas, chatName, addStanza}) => (
+const chatWindow = ({stanzas, username, recipient, addStanza}) => (
   <div className='chat-window'>
-    <h2>{chatName}</h2>
+    <h2>Chat with : {recipient}</h2>
     <ConversationDisplay stanzas={stanzas} />
-    <ChatInput chatName={chatName} addStanza={addStanza} />
+    <ChatInput username={username} addStanza={addStanza} />
   </div>
 )
 
@@ -20,7 +20,8 @@ chatWindow.propTypes = {
     username: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired
   }).isRequired).isRequired,
-  chatName: PropTypes.string.isRequired,
+  recipient: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
   addStanza: PropTypes.func.isRequired
 }
 

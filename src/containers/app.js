@@ -11,12 +11,14 @@ const App = ({stanzas, addStanza}) => (
   <div className='discuze__main-section'>
     <ChatWindow
       stanzas={stanzas}
-      chatName={'Alice'}
+      recipient={'Bob'}
+      username={'Alice'}
       addStanza={addStanza}
     />
     <ChatWindow
       stanzas={stanzas}
-      chatName={'Bob'}
+      recipient={'Alice'}
+      username={'Bob'}
       addStanza={addStanza}
     />
   </div>
