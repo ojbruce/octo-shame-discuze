@@ -13,6 +13,11 @@ Webpack, Mocha, nyc & ESLint
 # Requirements
 npm ou yarn
 
+To install the app simply run :
+```
+  yarn install
+```
+
 # Build
 Webpack will take in charge bundeling JS and SCSS files. 
 
@@ -25,6 +30,8 @@ Prod:
 ```
 yarn run build-prod
 ```
+
+Generated files are in dist just open index.html to see the app. 
 
 # Linting
 This project is linted with Eslint an standard js styleguide.
