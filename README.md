@@ -3,7 +3,7 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/standard/standard)
 
 
-A small chat project. It allows to 2 users to send messages in chat window.
+A small chat project. It allows 2 users to send messages in a chat window.
 
 Powered by react, redux and scss.
 
