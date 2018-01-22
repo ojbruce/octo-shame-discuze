@@ -10,7 +10,8 @@ const setup = () => {
     stanza: {
       id: 0,
       text: 'New Message',
-      username: 'Robert'
+      username: 'Robert',
+      currentUsername: 'Hugh'
     }
   }
 
